@@ -4,8 +4,8 @@ import HomepageCards from "./HomepageCards.js";
 import SearchForm from "./SearchForm.js";
 import { NavLink } from "react-router-dom";
 export default class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       Recipe: null
     };

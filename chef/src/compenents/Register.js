@@ -23,7 +23,7 @@ const LoginB = styled.div`
   padding: 3%;
 `;
 
-function Register(props) {
+function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Link, Switch, Router } from "react-router-dom";
 
 import "./App.css";
-import HomePage from "./compenents/Homepage.js";
+//import HomePage from "./compenents/Homepage.js";
 import NavBar from "./compenents/NavBar.js";
 import SearchForm from "./compenents/SearchForm.js";
 import ChefLogin from "./compenents/ChefLogin.js";
 import ChefPostPage from "./compenents/ChefPostPage.js";
 import styled from "styled-components";
 
-import PrivateRoute from "./compenents/PrivateRoute.js";
+//import PrivateRoute from "./compenents/PrivateRoute.js";
 
 const Header = styled.div`
   display: flex;
@@ -38,14 +38,11 @@ function App() {
       <header className="App-header">
         <Router>
           <div className="App">
-            <Route exact path="/" component={ChefLogin} />
-
             <NavBar />
-            <HomePage />
             <SearchForm />
-            {<PrivateRoute exact path="/ChefLogin" component={ChefLogin} />}
+
             <NavLinks>
-              <Links to="/chefposts">Chef Portfolio</Links>
+              <Links to="/chefpostpage">Chef Portfolio</Links>
             </NavLinks>
           </div>
           <Switch>

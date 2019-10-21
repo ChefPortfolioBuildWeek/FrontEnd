@@ -1,7 +1,7 @@
 import React from "react";
 
-const HomePageCard = props => {
-  const { recipes, chef, title } = props.movie;
+const HomePageCard = ()  => {
+  const { recipes, chef, title } = recipes;
   return (
     <div className="recipe-card">
       <h2>{title}</h2>
