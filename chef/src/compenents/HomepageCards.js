@@ -1,21 +1,21 @@
 import React from "react";
 
 const MovieCard = props => {
-  const { title, director, metascore, stars } = props.movie;
+  const { recipes, chef, title } = props.movie;
   return (
-    <div className="movie-card">
+    <div className="recipe-card">
       <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
+      <div className="recipe-chef-name">
+        Chef: <em>{recipes}</em>
       </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
+      <div className="recipes">
+        Recipes : <strong>{recipes}</strong>
       </div>
-      <h3>Actors</h3>
+      <h3>Chefs</h3>
 
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
+      {recipes.map(chef => (
+        <div key={chef} className="recipes-chef">
+          {chef}
         </div>
       ))}
     </div>

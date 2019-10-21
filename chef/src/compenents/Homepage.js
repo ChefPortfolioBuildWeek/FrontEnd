@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import HomepageCard from "./HomepageCard";
+import HomepageCards from "./HomepageCards.js";
 import { NavLink } from "react-router-dom";
 export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: null
+      Recipe: null
     };
   }
 
@@ -20,7 +20,7 @@ export default class HomePage extends React.Component {
     }
   }
 
-  fetchMovie = id => {
+  fetchRecipe = id => {
     axios
       .get(``)
       .then(res => this.setState({ recipe: res.data }))
@@ -45,7 +45,7 @@ export default class HomePage extends React.Component {
 
     return (
       <div className="save-wrapper">
-        <HomepageCard recipe={this.state.recipe} />
+        <HomepageCards recipe={this.state.recipe} />
         <div className="save-button" onClick={this.saverecipe}>
           Save
         </div>
