@@ -1,6 +1,6 @@
 import React from "react";
 
-const MovieCard = props => {
+const HomePageCard = props => {
   const { recipes, chef, title } = props.movie;
   return (
     <div className="recipe-card">
@@ -22,4 +22,4 @@ const MovieCard = props => {
   );
 };
 
-export default MovieCard;
+export default HomePageCard;

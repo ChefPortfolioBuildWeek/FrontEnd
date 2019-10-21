@@ -27,20 +27,20 @@ function Register(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axios
-      .post(`${baseURL}/auth/register`, { username: username, password })
-      .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        props.history.push("/ChefLogin");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  //const handleSubmit = e => {
+  //  e.preventDefault();
+  // const baseURL = "https://mypartyplanner.herokuapp.com/api";
+  // axios
+  //  .post(`${baseURL}/auth/register`, { username: username, password })
+  // .then(res => {
+  //   console.log(res);
+  //   localStorage.setItem("token", res.data.token);
+  //   props.history.push("/ChefLogin");
+  // })
+  //.catch(err => {
+  console.log(err);
+  //  });
+  //};
 
   return (
     <div className="RegisterForm">

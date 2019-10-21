@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Router, Link } from "react-router-dom";
 import { PageHeader } from "antd";
 
 const NavBar = () => {
@@ -7,22 +7,27 @@ const NavBar = () => {
     <div
       style={{ width: "30%", display: "flex", justifyContent: "space-between" }}
     >
-      <NavLink to="/signup" className="NavBtn">
-        {" "}
-        Signup{" "}
-      </NavLink>
-      <NavLink to="/login" className="NavBtn">
-        {" "}
-        Login{" "}
-      </NavLink>
-      <NavLink to="/home" className="NavBtn">
-        {" "}
-        Your Profile{" "}
-      </NavLink>
-      <NavLink to="/login" className="NavBtn">
-        {" "}
-        Logout{" "}
-      </NavLink>
+      <Router>
+        <NavLink to="/signup" className="NavBtn">
+          {" "}
+          Signup{" "}
+        </NavLink>
+        <NavLink to="/login" className="NavBtn">
+          {" "}
+          Login{" "}
+        </NavLink>
+        <NavLink to="/home" className="NavBtn">
+          {" "}
+          Your Profile{" "}
+        </NavLink>
+        <NavLink to="/login" className="NavBtn">
+          {" "}
+          Logout{" "}
+          <NavLink>
+            <Link to="/chefposts">Chef Portfolio</Link>
+          </NavLink>
+        </NavLink>
+      </Router>
     </div>
   );
 };
