@@ -50,7 +50,7 @@ export default class HomePage extends React.Component {
           Save
         </div>
         <button
-          onClick={() => this.deleteMovie(this.state.recipe.id)}
+          onClick={() => this.deleteRecipe(this.state.recipe.id)}
           className="delete-button"
         >
           Delete
