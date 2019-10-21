@@ -24,7 +24,7 @@ const CenterForm = styled.h1`
 `;
 const Button = styled.button`
     margin: 1% 0% 6% 0%;
-    padding: 1%
+    padding: 1%;
     width: 10%;
     font-weight: bold;
     background-color: #9ffcdf;
