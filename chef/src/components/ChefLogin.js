@@ -6,8 +6,8 @@ import axios from "axios";
 import chefPosting from "./ChefPostPage";
 import styled from "styled-components";
 
-// import GetLogin from './Login.js';
-// import RegisterForm from './Register';
+
+ import RegisterForm from './Register';
 
 const HomePage = styled.div`
   background-color: #52ad9c;
@@ -103,7 +103,10 @@ const FormikChefOnboarding = withFormik({
   }),
   handleSubmit(values, { setStatus }) {
     axios
-      .post("https://reqres.in/api/users", values)
+      .post(
+        "https://pacific-mountain-29202.herokuapp.com/api/auth/login",
+        values
+      )
       .then(res => {
         setStatus(res.data);
       })

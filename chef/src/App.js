@@ -3,10 +3,10 @@ import { Route, Link, Switch, Router } from "react-router-dom";
 
 import "./App.css";
 //import HomePage from "./compenents/Homepage.js";
-import NavBar from "./compenents/NavBar.js";
-import SearchForm from "./compenents/SearchForm.js";
-import ChefLogin from "./compenents/ChefLogin.js";
-import ChefPostPage from "./compenents/ChefPostPage.js";
+import NavBar from "./components/NavBar.js";
+import SearchForm from "./components/SearchForm.js";
+import ChefLogin from "./components/ChefLogin.js";
+import ChefPostPage from "./components/ChefPostPage.js";
 import styled from "styled-components";
 
 //import PrivateRoute from "./compenents/PrivateRoute.js";
