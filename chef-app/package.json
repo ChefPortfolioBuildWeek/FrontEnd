@@ -7,10 +7,7 @@
     "hoist-non-react-statics": "^3.3.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-<<<<<<< HEAD:chef/package.json
-=======
     "react-router": "^5.1.2",
->>>>>>> 9ce86823959bbbbf146671b11aefa55321746de7:chef-app/package.json
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "yup": "^0.27.0"
