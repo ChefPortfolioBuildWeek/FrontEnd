@@ -19,7 +19,7 @@ const Signup = props => {
 
     const handleSubmit = e => {
       e.preventDefault(props);
-      const baseURL = "https://pacific-mountain-29202.herokuapp.com/api";
+      const baseURL = "https://lambda-chef-portfolio.herokuapp.com/api/";
       axios
         .post(`${baseURL}/auth/register`, { username: username, password })
         .then(res => {
