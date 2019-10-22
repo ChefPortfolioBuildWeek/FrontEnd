@@ -81,7 +81,7 @@ const ChefOnboarding = ({values, touched, errors, status}) => {
                 <Route>
                    {/* <Route exact path='/chefposts' component={chefPosting} />
                    <button type='submit' onClick={chefPosting}>Login</button> */}
-                   <Button>Login</Button>
+                   <Button type='button'>Login</Button>
                 </Route>
             </Form>
             <Route>
