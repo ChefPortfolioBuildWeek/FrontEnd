@@ -1,29 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 //import HomePage from "./compenents/Homepage.js";
-//import NavBar from "./components/NavBar.js";
-import Login from "./components/ChefLogin.js";
-import Register from "./components/Register.js";
+import NavBar from "./components/NavBar.js";
 
 import ChefLogin from "./components/ChefLogin.js";
-//import ChefPostPage from "./components/ChefPostPage.js";
+import ChefPostPage from "./components/ChefPostPage.js";
 import styled from "styled-components";
 
 import PrivateRoute from "./components/PrivateRoute.js";
-
+import FormikChefPosting from "./components/ChefPostPage";
 
 const Header = styled.div`
   display: flex;
   justify-content: center;
+
 `;
 const NavLinks = styled.p`
   margin: 2%;
-  width: 15%;
+  width: 55%;
 `;
 const Links = styled(Link)`
   text-decoration: none;
+
   font-size: 1.2rem;
   color: #52ad9c;
   font-weight: bold;
@@ -37,12 +37,14 @@ const Links = styled(Link)`
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Route exact path="/" component={Register} />
-        {<PrivateRoute exact path="/Login" component={Login} />}
-      </div>
-    </Router>
+    <header className="App-header">
+      <Route>
+        <div className="App">
+          <Route exact path="/" component={ChefLogin} />
+          {<PrivateRoute exact path="/chefpostpage" component={ChefPostPage} />}
+        </div>
+      </Route>
+    </header>
   );
 }
 
