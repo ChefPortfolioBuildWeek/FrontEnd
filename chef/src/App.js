@@ -1,9 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 import "./App.css";
 //import HomePage from "./compenents/Homepage.js";
-import NavBar from "./components/NavBar.js";
+//import NavBar from "./components/NavBar.js";
+import Login from "./components/ChefLogin.js";
+import Register from "./components/Register.js";
 
 import ChefLogin from "./components/ChefLogin.js";
 //import ChefPostPage from "./components/ChefPostPage.js";
@@ -35,12 +37,13 @@ const Links = styled(Link)`
 function App() {
   return (
     <header className="App-header">
-      <Route>
+      <Router>
         <div className="App">
           <Route exact path="/" component={ChefLogin} />
+          <Route exact path="/" component={Register} />
           {<PrivateRoute exact path="/cheflogin" component={ChefLogin} />}
         </div>
-      </Route>
+      </Router>
     </header>
   );
 }
