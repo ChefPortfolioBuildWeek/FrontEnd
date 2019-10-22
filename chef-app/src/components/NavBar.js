@@ -1,35 +1,67 @@
 import React from "react";
-import { NavLink, Router, Link } from "react-router-dom";
-import { PageHeader } from "antd";
+import { Route, Link } from "react-router-dom";
+import styled from "styled-components";
 
-const NavBar = () => {
+import SignUpPage from "./Register";
+import ToDoList from "./ToDoList.js";
+import Party from "./Party.js";
+
+import "../index.css";
+
+const Ul = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  padding-left: 0;
+`;
+const Li = styled.li`
+  text-decoration: none;
+  color: white;
+`;
+
+const Navo = styled.div`
+  background: black;
+  background: #9ffcdf;
+`;
+
+function Nav() {
   return (
-    <div
-      style={{ width: "30%", display: "flex", justifyContent: "space-between" }}
-    >
-      <Router>
-        <NavLink to="/signup" className="NavBtn">
-          {" "}
-          Signup{" "}
-        </NavLink>
-        <NavLink to="/login" className="NavBtn">
-          {" "}
-          Login{" "}
-        </NavLink>
-        <NavLink to="/home" className="NavBtn">
-          {" "}
-          Your Profile{" "}
-        </NavLink>
-        <NavLink to="/login" className="NavBtn">
-          {" "}
-          Logout{" "}
-          <NavLink>
-            <Link to="/chefposts">Chef Portfolio</Link>
-          </NavLink>
-        </NavLink>
-      </Router>
-    </div>
-  );
-};
+    <Navo>
+      <Ul>
+        <Link to="/signuppage">
+          <Li>Sign-Up/Login</Li>
+        </Link>
+        <Link to="../Components/ChefPostPage">
+          <Li>Chef Post</Li>
+        </Link>
+        <Li>Homepage</Li>
 
-export default NavBar;
+      </Ul>
+      <Route exact path="/sign-up" component={SignUpPage} />
+      <Route exact path="/login" component={SigninPage} />
+      <Ul>
+        <Link to="/signuppage">
+          <Li>Home</Li>
+        </Link>
+        <Link to="/">
+          <Li>Log out</Li>
+        </Link>
+      </Ul>
+      <Route exact path="/sign-up" component={SignUpPage} />
+      <Route exact path="/login" component={SignInPage} />
+      <Route exact path="/chfpostpage" component={ChefPostpage} />
+    </Navo>
+  );
+}
+
+export default Nav;I
