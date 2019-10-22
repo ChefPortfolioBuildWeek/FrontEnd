@@ -6,7 +6,7 @@ import "./App.css";
 import NavBar from "./components/NavBar.js";
 
 import ChefLogin from "./components/ChefLogin.js";
-import ChefPostPage from "./components/ChefPostPage.js";
+//import ChefPostPage from "./components/ChefPostPage.js";
 import styled from "styled-components";
 
 import PrivateRoute from "./components/PrivateRoute.js";
@@ -34,28 +34,14 @@ const Links = styled(Link)`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Router>
-          <div className="App">
-            <NavBar />
-            <NavLinks>
-              <Links to="/chefpostpage">Chef Portfolio</Links>
-            </NavLinks>
-          </div>
-          <div className="App">
-            <Route exact path="/" component={ChefLogin} />
-            {
-              <PrivateRoute
-                exact
-                path="/chefpostpage"
-                component={ChefPostPage}
-              />
-            }
-          </div>
-        </Router>
-      </header>
-    </div>
+    <header className="App-header">
+      <Route>
+        <div className="App">
+          <Route exact path="/" component={ChefLogin} />
+          {<PrivateRoute exact path="/cheflogin" component={ChefLogin} />}
+        </div>
+      </Route>
+    </header>
   );
 }
 
