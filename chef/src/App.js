@@ -13,6 +13,7 @@ import styled from "styled-components";
 
 import PrivateRoute from "./components/PrivateRoute.js";
 
+
 const Header = styled.div`
   display: flex;
   justify-content: center;
@@ -36,15 +37,12 @@ const Links = styled(Link)`
 
 function App() {
   return (
-    <header className="App-header">
-      <Router>
-        <div className="App">
-          <Route exact path="/" component={ChefLogin} />
-          <Route exact path="/" component={Register} />
-          {<PrivateRoute exact path="/cheflogin" component={ChefLogin} />}
-        </div>
-      </Router>
-    </header>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Register} />
+        {<PrivateRoute exact path="/Login" component={Login} />}
+      </div>
+    </Router>
   );
 }
 
