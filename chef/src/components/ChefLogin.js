@@ -88,6 +88,7 @@ const ChefOnboarding = ({ values, touched, errors, status }) => {
 };
 
 const FormikChefOnboarding = withFormik({
+
   mapPropsToValues({ name, email, password, termsOfService }) {
     return {
       name: name || "",
@@ -104,7 +105,7 @@ const FormikChefOnboarding = withFormik({
   handleSubmit(values, { setStatus }) {
     axios
       .post(
-        "https://pacific-mountain-29202.herokuapp.com/api/auth/login",
+        "https://lambda-chef-portfolio.herokuapp.com/api/auth/login",
         values
       )
       .then(res => {
@@ -112,5 +113,6 @@ const FormikChefOnboarding = withFormik({
       })
       .catch(err => console.log(err.response));
   }
+
 })(ChefOnboarding);
 export default FormikChefOnboarding;

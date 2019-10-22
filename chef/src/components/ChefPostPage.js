@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import styled from "styled-components";
+import axiosWithAuth from "../util/axiosWithAuth";
 
 const PostPage = styled.div`
   background-color: #52ad9c;
@@ -23,14 +24,14 @@ const CenterForm = styled.h1`
   margin-top: 5%;
 `;
 const Button = styled.button`
-    margin: 1% 0% 6% 0%;
-    padding: 1%;
-    width: 10%;
-    font-weight: bold;
-    background-color: #9ffcdf;
-    color: #47624f;
-    border: 2px solid #47624f;
-    border-radius: 5%;
+  margin: 1% 0% 6% 0%;
+  padding: 1%;
+  width: 10%;
+  font-weight: bold;
+  background-color: #9ffcdf;
+  color: #47624f;
+  border: 2px solid #47624f;
+  border-radius: 5%;
 `;
 const CardArea = styled.div`
   margin-left: 12%;
@@ -135,12 +136,17 @@ const FormikChefPosting = withFormik({
       .required("Please select one")
   }),
   handleSubmit(values, { setStatus }) {
-    axios
-      .post("https://reqres.in/api/users", values)
+    axiosWithAuth()
+      .post(
+        "https://lambda-chef-portfolio.herokuapp.com/api/posts/create",
+        values
+      )
       .then(res => {
         setStatus(res.data);
       })
       .catch(err => console.log(err.response));
   }
+
+
 })(ChefPosting);
 export default FormikChefPosting;
