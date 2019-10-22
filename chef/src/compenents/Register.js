@@ -51,7 +51,7 @@ const Signup = props => {
             className="sign-up-form"
           >
             <div>
-              <h1>Pintereach App</h1>
+              <h1>Chef App</h1>
             </div>
 
             <Form onSubmit={handleSubmit}>
