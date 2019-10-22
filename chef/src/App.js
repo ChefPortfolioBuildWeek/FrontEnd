@@ -1,15 +1,16 @@
 import React from "react";
-import { Route, Link, Switch, Router } from "react-router-dom";
+import { Route, Link, Router } from "react-router-dom";
 
 import "./App.css";
 //import HomePage from "./compenents/Homepage.js";
 import NavBar from "./compenents/NavBar.js";
-import SearchForm from "./compenents/SearchForm.js";
-import ChefLogin from "./compenents/ChefLogin.js";
-import ChefPostPage from "./compenents/ChefPostPage.js";
+
+
+
 import styled from "styled-components";
 
-//import PrivateRoute from "./compenents/PrivateRoute.js";
+import PrivateRoute from "./compenents/PrivateRoute.js";
+import Register from "./compenents/Register";
 
 const Header = styled.div`
   display: flex;
@@ -34,24 +35,12 @@ const Links = styled(Link)`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Router>
-          <div className="App">
-            <NavBar />
-            <SearchForm />
-
-            <NavLinks>
-              <Links to="/chefpostpage">Chef Portfolio</Links>
-            </NavLinks>
-          </div>
-          <Switch>
-            <Route exact path="/" component={ChefLogin} />
-            <Route exact path="/chefpostpage" component={ChefPostPage} />
-          </Switch>
-        </Router>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Register} />
+        {<PrivateRoute exact path="/Login" component={Login} />}
+      </div>
+    </Router>
   );
 }
 
